@@ -3,6 +3,26 @@ import { MessageCircle } from "lucide-react";
 import Link from "next/link";
 
 const Home = () => {
+  const POSTS = [
+    {
+      slug: "learn-nextjs-basics",
+      title: "Learn nextjs Basics",
+      content: `#Learn Next.js basics
+      Next.js is a popular react framwwork that helps you build fast and SEO-freiendly websites.
+
+
+      ## Why Use Next.js ?
+      - Build-in Routing system
+      - Server-side rendering
+
+
+
+      **Tip:** Start with the App Router if you are building new Projects.
+      
+      `,
+    },
+  ];
+
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -26,13 +46,24 @@ const Home = () => {
       </section>
 
       {/* About section */}
-      <section className="flex flex-col px-20 ">
-        <h1 className="text-3xl font-bold">About Me</h1>
-        <p className="text-lg text-muted-foreground">
+      <section className="max-w-4xl mx-auto px-4 py-16 ">
+        <h1 className="text-3xl font-bold mb-4">About Me</h1>
+        <p className=" text-muted-foreground">
           I specialize in React, Next js and TypeScript. With years of
           experience building scalable applications, i love turning ideas into
           reality
         </p>
+      </section>
+
+      {/* Recent Posts */}
+      <section className="max-w-4xl mx-auto px-4 py-16 ">
+        <h1 className="text-3xl font-bold mb-4">Recent Posts</h1>
+
+        {POSTS.length > 0 ? (
+          <div>Hello</div>
+        ) : (
+          <p className="text-muted-foreground">No posts yet.</p>
+        )}
       </section>
     </main>
   );
