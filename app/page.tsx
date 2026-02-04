@@ -24,6 +24,16 @@ const Home = () => {
           </Button>
         </div>
       </section>
+
+      {/* About section */}
+      <section className="flex flex-col px-20 ">
+        <h1 className="text-3xl font-bold">About Me</h1>
+        <p className="text-lg text-muted-foreground">
+          I specialize in React, Next js and TypeScript. With years of
+          experience building scalable applications, i love turning ideas into
+          reality
+        </p>
+      </section>
     </main>
   );
 };
