@@ -1,3 +1,4 @@
+import MarkdownRenderer from "@/components/MarkdownRenderer";
 import { Button } from "@/components/ui/button";
 import prisma from "@/lib/db";
 import { ArrowLeft } from "lucide-react";
@@ -28,7 +29,9 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
           {new Date(post.createdAt).toLocaleDateString()}
         </p>
 
-        <div className="prose prose-neutral dark:prose-invert max-w-none"></div>
+        <div className="prose prose-neutral dark:prose-invert max-w-none">
+          <MarkdownRenderer content={post.content} />
+        </div>
       </article>
     </main>
   );
