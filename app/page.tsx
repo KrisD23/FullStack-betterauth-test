@@ -50,7 +50,10 @@ const Home = async () => {
         {posts.length > 0 ? (
           <div>
             {posts.map((post) => (
-              <Card key={post.id} className="hover:bg-accent transition-colors">
+              <Card
+                key={post.id}
+                className="hover:bg-accent transition-colors mb-2"
+              >
                 <Link href={`/blog/${post.slug}`}>
                   <CardContent className="p-4">
                     <h3 className="font-semibold">{post.title}</h3>

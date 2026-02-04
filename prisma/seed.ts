@@ -3,21 +3,30 @@ import prisma from "@/lib/db";
 async function main() {
   const blogPosts = [
     {
-      slug: "learn-nextjs-basics",
-      title: "Learn nextjs Basics",
-      content: `#Learn Next.js basics
-      Next.js is a popular react framwwork that helps you build fast and SEO-freiendly websites.
+      slug: "master-tailwind-css",
+      title: "Master Tailwind CSS",
+      content: `# Master Tailwind CSS
+Tailwind CSS is a utility-first CSS framework for rapid UI development.
 
+## Benefits
+- Highly customizable
+- Responsive design out of the box
 
-      ## Why Use Next.js ?
-      - Build-in Routing system
-      - Server-side rendering
+**Tip:** Use Tailwind Play to experiment with styles quickly.
+`,
+    },
+    {
+      slug: "deploy-with-vercel",
+      title: "Deploy with Vercel",
+      content: `# Deploy with Vercel
+Vercel is a platform for frontend frameworks and static sites, built to integrate with your headless content, commerce, or database.
 
+## Why Vercel?
+- Easy integration with GitHub
+- Fast global CDN
 
-
-      **Tip:** Start with the App Router if you are building new Projects.
-      
-      `,
+**Tip:** Connect your repo and deploy in seconds!
+`,
     },
   ];
 
