@@ -1,10 +1,13 @@
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+
 import { MessageCircle } from "lucide-react";
 import Link from "next/link";
 
 const Home = () => {
   const POSTS = [
     {
+      id: 1,
       slug: "learn-nextjs-basics",
       title: "Learn nextjs Basics",
       content: `#Learn Next.js basics
@@ -60,7 +63,17 @@ const Home = () => {
         <h1 className="text-3xl font-bold mb-4">Recent Posts</h1>
 
         {POSTS.length > 0 ? (
-          <div>Hello</div>
+          <div>
+            {POSTS.map((post) => (
+              <Card key={post.id} className="hover:bg-accent transition-colors">
+                <Link href={`/blog/${post.slug}`}>
+                  <CardContent className="p-4">
+                    <h3 className="font-semibold">{post.title}</h3>
+                  </CardContent>
+                </Link>
+              </Card>
+            ))}
+          </div>
         ) : (
           <p className="text-muted-foreground">No posts yet.</p>
         )}
