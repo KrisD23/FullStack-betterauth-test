@@ -1,4 +1,5 @@
 import AuthButton from "@/components/AuthButton";
+import CommentForm from "@/components/CommentForm";
 import { Button } from "@/components/ui/button";
 import prisma from "@/lib/db";
 import { ArrowLeft } from "lucide-react";
@@ -27,7 +28,7 @@ const page = async () => {
           <AuthButton />
         </div>
 
-        {/* <CommentForm /> */}
+        <CommentForm />
 
         <div className="mt-12">
           <h2 className="text-xl font-semibold mb-4">
