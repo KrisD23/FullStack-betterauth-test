@@ -1,5 +1,6 @@
 import AuthButton from "@/components/AuthButton";
 import CommentForm from "@/components/CommentForm";
+import CommentList from "@/components/CommentList";
 import { Button } from "@/components/ui/button";
 import prisma from "@/lib/db";
 import { ArrowLeft } from "lucide-react";
@@ -34,7 +35,7 @@ const page = async () => {
           <h2 className="text-xl font-semibold mb-4">
             All Comments ({comments.length})
           </h2>
-          {/* <CommentList comments={comments} /> */}
+          <CommentList comments={comments} />
         </div>
       </div>
     </main>
