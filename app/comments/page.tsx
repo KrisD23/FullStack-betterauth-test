@@ -1,3 +1,4 @@
+import AuthButton from "@/components/AuthButton";
 import { Button } from "@/components/ui/button";
 import prisma from "@/lib/db";
 import { ArrowLeft } from "lucide-react";
@@ -22,7 +23,9 @@ const page = async () => {
           Sign in with GitHub to leave a comment or message.
         </p>
 
-        <div className="mb-8">{/* <AuthButton /> */}</div>
+        <div className="mb-8">
+          <AuthButton />
+        </div>
 
         {/* <CommentForm /> */}
 
