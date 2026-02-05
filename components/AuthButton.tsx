@@ -1,7 +1,8 @@
 "use client";
-import { Github, Loader2 } from "lucide-react";
+import { Github, Loader2, LogOut } from "lucide-react";
 import { Button } from "./ui/button";
-import { signIn, useSession } from "@/lib/auth-client";
+import { signIn, signOut, useSession } from "@/lib/auth-client";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 const AuthButton = () => {
   const { data: session, isPending } = useSession();
@@ -11,6 +12,28 @@ const AuthButton = () => {
       <div className="flex items-center gap-2 text-muted-foreground">
         <Loader2 className="w-4 h-4 animate-spin" />
         Loading....
+      </div>
+    );
+  }
+  if (session?.user) {
+    return (
+      <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
+          <Avatar className="w-8 h-8">
+            <AvatarImage
+              src={session.user.image || ""}
+              alt={session.user.name || "User"}
+            />
+            <AvatarFallback>{session.user.name?.[0] || "U"}</AvatarFallback>
+          </Avatar>
+          <span className="text-sm">
+            {session.user.name || session.user.email}
+          </span>
+        </div>
+        <Button variant="outline" size="sm" onClick={() => signOut()}>
+          <LogOut className="w-4 h-4 mr-2" />
+          Sign Out
+        </Button>
       </div>
     );
   }
